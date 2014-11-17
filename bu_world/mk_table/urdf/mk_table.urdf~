@@ -1,0 +1,43 @@
+<robot
+  name="mk_table">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.54 -2.3654E-15 0.67834"
+        rpy="0 0 0" />
+      <mass
+        value="33.097" />
+      <inertia
+        ixx="2.1423"
+        ixy="1.5272E-15"
+        ixz="-2.4586E-15"
+        iyy="7.4107"
+        iyz="4.3591E-15"
+        izz="8.3744" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/bu_world/mk_table/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/bu_world/mk_table/meshes/dae/mk_table.dae" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

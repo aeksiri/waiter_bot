@@ -1,0 +1,1769 @@
+<robot
+  name="waiter_bot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-3.8119E-05 -0.00079288 0.2424"
+        rpy="0 0 0" />
+      <mass
+        value="20.912" />
+      <inertia
+        ixx="0.49991"
+        ixy="-0.00013452"
+        ixz="0.00064395"
+        iyy="0.55751"
+        iyz="-0.021755"
+        izz="0.28579" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="base">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wheel_left_link">
+    <inertial>
+      <origin
+        xyz="-0.0017316 1.8023E-06 7.4443E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.16061" />
+      <inertia
+        ixx="0.00040783"
+        ixy="-6.6345E-09"
+        ixz="-2.7427E-09"
+        iyy="0.00021005"
+        iyz="6.9394E-11"
+        izz="0.00021005" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_left_link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.1795 0 0.0635"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_left_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="10"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="wheel_right_link">
+    <inertial>
+      <origin
+        xyz="0.0017316 6.9875E-11 -1.6917E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.16061" />
+      <inertia
+        ixx="0.00040782"
+        ixy="-5.6672E-13"
+        ixz="1.3718E-12"
+        iyy="0.00021005"
+        iyz="1.35E-12"
+        izz="0.00021005" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_right_link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.1795 0 0.0635"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_right_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="10"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="wheel_front_left_link">
+    <inertial>
+      <origin
+        xyz="0.0018426 5.5511E-17 2.0817E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.29253" />
+      <inertia
+        ixx="0.00031096"
+        ixy="-4.7747E-19"
+        ixz="1.7075E-19"
+        iyy="0.00018232"
+        iyz="-7.8362E-21"
+        izz="0.00018232" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_front_left_link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_front_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_front_left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0873 0.157 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_front_left_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="0"
+      velocity="20" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="wheel_front_right_link">
+    <inertial>
+      <origin
+        xyz="-0.0018426 2.7756E-17 1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.29253" />
+      <inertia
+        ixx="0.00031096"
+        ixy="-3.8149E-21"
+        ixz="9.7194E-22"
+        iyy="0.00018232"
+        iyz="7.7863E-21"
+        izz="0.00018232" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_front_right_link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_front_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_front_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.0873 0.157 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_front_right_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="0"
+      velocity="20" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="wheel_rear_link">
+    <inertial>
+      <origin
+        xyz="7.4822E-10 0.00013642 -5.1123E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.45503" />
+      <inertia
+        ixx="0.00041293"
+        ixy="1.0792E-11"
+        ixz="2.5494E-12"
+        iyy="0.00071095"
+        iyz="-7.3739E-12"
+        izz="0.00041293" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_rear_link.STL" />
+      </geometry>
+      <material
+        name="green">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_rear_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_rear_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.1737 0.0635"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_rear_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="10"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="wheel_enc_left_link">
+    <inertial>
+      <origin
+        xyz="-0.0070609 -2.4818E-16 -6.9389E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0081115" />
+      <inertia
+        ixx="7.8797E-07"
+        ixy="9.8105E-21"
+        ixz="-8.5663E-23"
+        iyy="1.0663E-06"
+        iyz="1.8476E-23"
+        izz="1.0663E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_enc_left_link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_enc_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_enc_left_link"
+    type="continuous">
+    <origin
+      xyz="-0.0735 0 0.0175"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_enc_left_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="0"
+      velocity="30" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="wheel_enc_center_link">
+    <inertial>
+      <origin
+        xyz="0.0070609 4.7613E-17 3.4694E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0081115" />
+      <inertia
+        ixx="7.8797E-07"
+        ixy="2.0436E-21"
+        ixz="-1.6209E-22"
+        iyy="1.0663E-06"
+        iyz="3.6996E-24"
+        izz="1.0663E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_enc_center_link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_enc_center_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_enc_center_joint"
+    type="continuous">
+    <origin
+      xyz="-0.001 0 0.0175"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_enc_center_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="0"
+      velocity="30" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="wheel_enc_right_link">
+    <inertial>
+      <origin
+        xyz="0.0070609 1.005E-16 -6.9389E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0081115" />
+      <inertia
+        ixx="7.8797E-07"
+        ixy="3.8873E-21"
+        ixz="2.2234E-22"
+        iyy="1.0663E-06"
+        iyz="3.1386E-23"
+        izz="1.0663E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_enc_right_link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_enc_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_enc_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.0735 0 0.0175"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_enc_right_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="0"
+      velocity="30" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+  </joint>
+  <link
+    name="chest_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.00041206 0.0074823 -0.015531"
+        rpy="0 0 0" />
+      <mass
+        value="1.0755" />
+      <inertia
+        ixx="0.0065283"
+        ixy="6.9555E-06"
+        ixz="8.0264E-06"
+        iyy="0.0080216"
+        iyz="0.00022396"
+        izz="0.002653" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/chest_yaw_link.STL" />
+      </geometry>
+      <material
+        name="blue">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/chest_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="chest_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.67143"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="chest_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="tray_pitch_link">
+    <inertial>
+      <origin
+        xyz="-8.5201E-10 0.017043 0.12953"
+        rpy="0 0 0" />
+      <mass
+        value="0.17949" />
+      <inertia
+        ixx="0.0013069"
+        ixy="2.3889E-12"
+        ixz="1.4953E-11"
+        iyy="0.0016939"
+        iyz="4.5408E-05"
+        izz="0.00042449" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/tray_pitch_link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/tray_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tray_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.02548 0.028"
+      rpy="0 0 0" />
+    <parent
+      link="chest_yaw_link" />
+    <child
+      link="tray_pitch_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="20"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.57"
+      soft_lower="0.01"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="chest_pitch_link">
+    <inertial>
+      <origin
+        xyz="-5.9256E-05 -0.028382 0.15252"
+        rpy="0 0 0" />
+      <mass
+        value="2.8255" />
+      <inertia
+        ixx="0.017701"
+        ixy="-6.6758E-05"
+        ixz="-3.2924E-05"
+        iyy="0.028436"
+        iyz="0.00067862"
+        izz="0.01343" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/chest_pitch_link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/chest_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="chest_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.02548 0.028"
+      rpy="0 0 0" />
+    <parent
+      link="chest_yaw_link" />
+    <child
+      link="chest_pitch_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="20"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.57"
+      soft_lower="0.01"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="head_yaw_link">
+    <inertial>
+      <origin
+        xyz="-0.00028335 -6.1496E-05 -0.0026578"
+        rpy="0 0 0" />
+      <mass
+        value="0.14074" />
+      <inertia
+        ixx="0.00058142"
+        ixy="-4.6164E-09"
+        ixz="-2.7143E-06"
+        iyy="0.00059095"
+        iyz="-8.3477E-08"
+        izz="2.6988E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/head_yaw_link.STL" />
+      </geometry>
+      <material
+        name="blue">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/head_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.02548 0.27937"
+      rpy="0 0 0" />
+    <parent
+      link="chest_pitch_link" />
+    <child
+      link="head_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="head_pitch_link">
+    <inertial>
+      <origin
+        xyz="-1.7298E-05 0.00098636 0.079602"
+        rpy="0 0 0" />
+      <mass
+        value="0.62154" />
+      <inertia
+        ixx="0.00047842"
+        ixy="-1.3981E-06"
+        ixz="-2.649E-07"
+        iyy="0.0030069"
+        iyz="5.4783E-06"
+        izz="0.0028797" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/head_pitch_link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/head_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0545"
+      rpy="0 0 0" />
+    <parent
+      link="head_yaw_link" />
+    <child
+      link="head_pitch_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="rarm_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.040838 -2.0962E-05 2.4467E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.29537" />
+      <inertia
+        ixx="0.00017565"
+        ixy="4.2274E-07"
+        ixz="-4.5719E-08"
+        iyy="0.00055958"
+        iyz="8.0348E-09"
+        izz="0.00068099" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.17524 -0.02548 0.25777"
+      rpy="0 0 0" />
+    <parent
+      link="chest_pitch_link" />
+    <child
+      link="rarm_shoulder_pitch_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="rarm_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="-2.1161E-06 -0.010689 -0.04963"
+        rpy="0 0 0" />
+      <mass
+        value="0.12976" />
+      <inertia
+        ixx="0.00015756"
+        ixy="8.3215E-11"
+        ixz="1.8381E-09"
+        iyy="7.7009E-05"
+        iyz="1.5334E-05"
+        izz="0.00010542" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="green">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="rarm_shoulder_pitch_link" />
+    <child
+      link="rarm_shoulder_roll_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="rarm_shoulder_yaw_link">
+    <inertial>
+      <origin
+        xyz="-6.3033E-05 0.00031315 -0.061294"
+        rpy="0 0 0" />
+      <mass
+        value="0.12735" />
+      <inertia
+        ixx="0.00016656"
+        ixy="3.4965E-10"
+        ixz="-1.1801E-07"
+        iyy="0.00015711"
+        iyz="-1.8589E-06"
+        izz="2.7768E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_shoulder_yaw_link.STL" />
+      </geometry>
+      <material
+        name="blue">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_shoulder_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_shoulder_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0884"
+      rpy="0 0 0" />
+    <parent
+      link="rarm_shoulder_roll_link" />
+    <child
+      link="rarm_shoulder_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="rarm_elbow_roll_link">
+    <inertial>
+      <origin
+        xyz="1.7119E-07 -0.013079 -0.055997"
+        rpy="0 0 0" />
+      <mass
+        value="0.22978" />
+      <inertia
+        ixx="0.00015501"
+        ixy="2.3445E-10"
+        ixz="5.6555E-10"
+        iyy="0.00010379"
+        iyz="1.4292E-05"
+        izz="9.1579E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_elbow_roll_link.STL" />
+      </geometry>
+      <material
+        name="green">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_elbow_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_elbow_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.097"
+      rpy="0 0 0" />
+    <parent
+      link="rarm_shoulder_yaw_link" />
+    <child
+      link="rarm_elbow_roll_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="rarm_forearm_yaw_link">
+    <inertial>
+      <origin
+        xyz="-3.5288E-05 0.00037366 -0.068872"
+        rpy="0 0 0" />
+      <mass
+        value="0.23636" />
+      <inertia
+        ixx="0.00022102"
+        ixy="3.1211E-09"
+        ixz="-1.7331E-07"
+        iyy="0.00020691"
+        iyz="-3.2996E-06"
+        izz="5.0511E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_forearm_yaw_link.STL" />
+      </geometry>
+      <material
+        name="blue">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_forearm_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_forearm_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0859"
+      rpy="0 0 0" />
+    <parent
+      link="rarm_elbow_roll_link" />
+    <child
+      link="rarm_forearm_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="7.3"
+      velocity="8.2" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="rarm_wrist_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.0052782 -5.4708E-05 -0.052471"
+        rpy="0 0 0" />
+      <mass
+        value="0.16057" />
+      <inertia
+        ixx="9.4951E-05"
+        ixy="4.601E-07"
+        ixz="1.5477E-05"
+        iyy="0.00010267"
+        iyz="-2.4926E-07"
+        izz="5.9955E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_wrist_roll_link.STL" />
+      </geometry>
+      <material
+        name="green">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_wrist_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_wrist_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0945"
+      rpy="0 0 0" />
+    <parent
+      link="rarm_forearm_yaw_link" />
+    <child
+      link="rarm_wrist_roll_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="7.3"
+      velocity="8.2" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="rarm_gripper_roll_link">
+    <inertial>
+      <origin
+        xyz="0.0061458 -0.00099123 -0.033325"
+        rpy="0 0 0" />
+      <mass
+        value="0.025912" />
+      <inertia
+        ixx="2.8112E-05"
+        ixy="1.5785E-07"
+        ixz="4.9505E-06"
+        iyy="2.2617E-05"
+        iyz="-8.5595E-07"
+        izz="1.3172E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_gripper_roll_link.STL" />
+      </geometry>
+      <material
+        name="green">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_gripper_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_gripper_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.008 0.0001 -0.057"
+      rpy="0 0 0" />
+    <parent
+      link="rarm_wrist_roll_link" />
+    <child
+      link="rarm_gripper_roll_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="7.3"
+      velocity="8.2" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="larm_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.040838 -2.0962E-05 -2.4467E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.29537" />
+      <inertia
+        ixx="0.00017565"
+        ixy="-4.2274E-07"
+        ixz="-4.5719E-08"
+        iyy="0.00055958"
+        iyz="-8.0348E-09"
+        izz="0.00068099" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.17524 -0.02548 0.25777"
+      rpy="0 0 0" />
+    <parent
+      link="chest_pitch_link" />
+    <child
+      link="larm_shoulder_pitch_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="larm_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="-2.1157E-06 -0.010689 -0.04963"
+        rpy="0 0 0" />
+      <mass
+        value="0.12976" />
+      <inertia
+        ixx="0.00015756"
+        ixy="8.3843E-11"
+        ixz="1.841E-09"
+        iyy="7.7009E-05"
+        iyz="1.5334E-05"
+        izz="0.00010542" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="green">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="larm_shoulder_pitch_link" />
+    <child
+      link="larm_shoulder_roll_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="larm_shoulder_yaw_link">
+    <inertial>
+      <origin
+        xyz="6.7964E-05 0.00031315 -0.061294"
+        rpy="0 0 0" />
+      <mass
+        value="0.12735" />
+      <inertia
+        ixx="0.00016656"
+        ixy="-4.8743E-09"
+        ixz="1.0218E-07"
+        iyy="0.00015711"
+        iyz="-1.8588E-06"
+        izz="2.7768E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_shoulder_yaw_link.STL" />
+      </geometry>
+      <material
+        name="blue">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_shoulder_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_shoulder_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0884"
+      rpy="0 0 0" />
+    <parent
+      link="larm_shoulder_roll_link" />
+    <child
+      link="larm_shoulder_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="larm_elbow_roll_link">
+    <inertial>
+      <origin
+        xyz="1.7119E-07 -0.013079 -0.055997"
+        rpy="0 0 0" />
+      <mass
+        value="0.22978" />
+      <inertia
+        ixx="0.00015501"
+        ixy="2.3445E-10"
+        ixz="5.6555E-10"
+        iyy="0.00010379"
+        iyz="1.4292E-05"
+        izz="9.1579E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_elbow_roll_link.STL" />
+      </geometry>
+      <material
+        name="green">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_elbow_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_elbow_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.097"
+      rpy="0 0 0" />
+    <parent
+      link="larm_shoulder_yaw_link" />
+    <child
+      link="larm_elbow_roll_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="6" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="larm_forearm_yaw_link">
+    <inertial>
+      <origin
+        xyz="3.5289E-05 0.00037366 -0.068872"
+        rpy="0 0 0" />
+      <mass
+        value="0.23636" />
+      <inertia
+        ixx="0.00022102"
+        ixy="-3.1123E-09"
+        ixz="1.733E-07"
+        iyy="0.00020691"
+        iyz="-3.2996E-06"
+        izz="5.0511E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_forearm_yaw_link.STL" />
+      </geometry>
+      <material
+        name="blue">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_forearm_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_forearm_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0859"
+      rpy="0 0 0" />
+    <parent
+      link="larm_elbow_roll_link" />
+    <child
+      link="larm_forearm_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="7.3"
+      velocity="8.2" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="larm_wrist_roll_link">
+    <inertial>
+      <origin
+        xyz="0.0052782 -5.4707E-05 -0.052471"
+        rpy="0 0 0" />
+      <mass
+        value="0.16057" />
+      <inertia
+        ixx="9.4951E-05"
+        ixy="-4.601E-07"
+        ixz="-1.5477E-05"
+        iyy="0.00010267"
+        iyz="-2.4925E-07"
+        izz="5.9955E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_wrist_roll_link.STL" />
+      </geometry>
+      <material
+        name="green">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_wrist_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_wrist_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0945"
+      rpy="0 0 0" />
+    <parent
+      link="larm_forearm_yaw_link" />
+    <child
+      link="larm_wrist_roll_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="7.3"
+      velocity="8.2" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="larm_gripper_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.0061458 -0.00099123 -0.033325"
+        rpy="0 0 0" />
+      <mass
+        value="0.025912" />
+      <inertia
+        ixx="2.8112E-05"
+        ixy="-1.5785E-07"
+        ixz="-4.9505E-06"
+        iyy="2.2617E-05"
+        iyz="-8.5595E-07"
+        izz="1.3172E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_gripper_roll_link.STL" />
+      </geometry>
+      <material
+        name="green">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_gripper_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_gripper_roll_joint"
+    type="revolute">
+    <origin
+      xyz="-0.008 0.0001 -0.057"
+      rpy="0 0 0" />
+    <parent
+      link="larm_wrist_roll_link" />
+    <child
+      link="larm_gripper_roll_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="7.3"
+      velocity="8.2" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+</robot>

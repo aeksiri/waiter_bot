@@ -1,0 +1,86 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"chest_yaw_link" [label="chest_yaw_link"];
+"chest_pitch_link" [label="chest_pitch_link"];
+"head_yaw_link" [label="head_yaw_link"];
+"head_pitch_link" [label="head_pitch_link"];
+"larm_shoulder_pitch_link" [label="larm_shoulder_pitch_link"];
+"larm_shoulder_roll_link" [label="larm_shoulder_roll_link"];
+"larm_shoulder_yaw_link" [label="larm_shoulder_yaw_link"];
+"larm_elbow_roll_link" [label="larm_elbow_roll_link"];
+"larm_forearm_yaw_link" [label="larm_forearm_yaw_link"];
+"larm_wrist_roll_link" [label="larm_wrist_roll_link"];
+"larm_gripper_roll_link" [label="larm_gripper_roll_link"];
+"rarm_shoulder_pitch_link" [label="rarm_shoulder_pitch_link"];
+"rarm_shoulder_roll_link" [label="rarm_shoulder_roll_link"];
+"rarm_shoulder_yaw_link" [label="rarm_shoulder_yaw_link"];
+"rarm_elbow_roll_link" [label="rarm_elbow_roll_link"];
+"rarm_forearm_yaw_link" [label="rarm_forearm_yaw_link"];
+"rarm_wrist_roll_link" [label="rarm_wrist_roll_link"];
+"rarm_gripper_roll_link" [label="rarm_gripper_roll_link"];
+"tray_pitch_link" [label="tray_pitch_link"];
+"wheel_enc_center_link" [label="wheel_enc_center_link"];
+"wheel_enc_left_link" [label="wheel_enc_left_link"];
+"wheel_enc_right_link" [label="wheel_enc_right_link"];
+"wheel_front_left_link" [label="wheel_front_left_link"];
+"wheel_front_right_link" [label="wheel_front_right_link"];
+"wheel_left_link" [label="wheel_left_link"];
+"wheel_rear_link" [label="wheel_rear_link"];
+"wheel_right_link" [label="wheel_right_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "chest_yaw_joint" [label="xyz: 0 0 0.67143 \nrpy: 0 -0 0"]
+"chest_yaw_joint" -> "chest_yaw_link"
+"chest_yaw_link" -> "chest_pitch_joint" [label="xyz: 0 0.02548 0.028 \nrpy: 0 -0 0"]
+"chest_pitch_joint" -> "chest_pitch_link"
+"chest_pitch_link" -> "head_yaw_joint" [label="xyz: 0 -0.02548 0.27937 \nrpy: 0 -0 0"]
+"head_yaw_joint" -> "head_yaw_link"
+"head_yaw_link" -> "head_pitch_joint" [label="xyz: 0 0 0.0545 \nrpy: 0 -0 0"]
+"head_pitch_joint" -> "head_pitch_link"
+"chest_pitch_link" -> "larm_shoulder_pitch_joint" [label="xyz: -0.17524 -0.02548 0.25777 \nrpy: 0 -0 0"]
+"larm_shoulder_pitch_joint" -> "larm_shoulder_pitch_link"
+"larm_shoulder_pitch_link" -> "larm_shoulder_roll_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"larm_shoulder_roll_joint" -> "larm_shoulder_roll_link"
+"larm_shoulder_roll_link" -> "larm_shoulder_yaw_joint" [label="xyz: 0 0 -0.0884 \nrpy: 0 -0 0"]
+"larm_shoulder_yaw_joint" -> "larm_shoulder_yaw_link"
+"larm_shoulder_yaw_link" -> "larm_elbow_roll_joint" [label="xyz: 0 0 -0.097 \nrpy: 0 -0 0"]
+"larm_elbow_roll_joint" -> "larm_elbow_roll_link"
+"larm_elbow_roll_link" -> "larm_forearm_yaw_joint" [label="xyz: 0 0 -0.0859 \nrpy: 0 -0 0"]
+"larm_forearm_yaw_joint" -> "larm_forearm_yaw_link"
+"larm_forearm_yaw_link" -> "larm_wrist_roll_joint" [label="xyz: 0 0 -0.0945 \nrpy: 0 -0 0"]
+"larm_wrist_roll_joint" -> "larm_wrist_roll_link"
+"larm_wrist_roll_link" -> "larm_gripper_roll_joint" [label="xyz: -0.008 0.0001 -0.057 \nrpy: 0 -0 0"]
+"larm_gripper_roll_joint" -> "larm_gripper_roll_link"
+"chest_pitch_link" -> "rarm_shoulder_pitch_joint" [label="xyz: 0.17524 -0.02548 0.25777 \nrpy: 0 -0 0"]
+"rarm_shoulder_pitch_joint" -> "rarm_shoulder_pitch_link"
+"rarm_shoulder_pitch_link" -> "rarm_shoulder_roll_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"rarm_shoulder_roll_joint" -> "rarm_shoulder_roll_link"
+"rarm_shoulder_roll_link" -> "rarm_shoulder_yaw_joint" [label="xyz: 0 0 -0.0884 \nrpy: 0 -0 0"]
+"rarm_shoulder_yaw_joint" -> "rarm_shoulder_yaw_link"
+"rarm_shoulder_yaw_link" -> "rarm_elbow_roll_joint" [label="xyz: 0 0 -0.097 \nrpy: 0 -0 0"]
+"rarm_elbow_roll_joint" -> "rarm_elbow_roll_link"
+"rarm_elbow_roll_link" -> "rarm_forearm_yaw_joint" [label="xyz: 0 0 -0.0859 \nrpy: 0 -0 0"]
+"rarm_forearm_yaw_joint" -> "rarm_forearm_yaw_link"
+"rarm_forearm_yaw_link" -> "rarm_wrist_roll_joint" [label="xyz: 0 0 -0.0945 \nrpy: 0 -0 0"]
+"rarm_wrist_roll_joint" -> "rarm_wrist_roll_link"
+"rarm_wrist_roll_link" -> "rarm_gripper_roll_joint" [label="xyz: 0.008 0.0001 -0.057 \nrpy: 0 -0 0"]
+"rarm_gripper_roll_joint" -> "rarm_gripper_roll_link"
+"chest_yaw_link" -> "tray_pitch_joint" [label="xyz: 0 0.02548 0.028 \nrpy: 0 -0 0"]
+"tray_pitch_joint" -> "tray_pitch_link"
+"base_link" -> "wheel_enc_center_joint" [label="xyz: -0.001 0 0.0175 \nrpy: 0 -0 0"]
+"wheel_enc_center_joint" -> "wheel_enc_center_link"
+"base_link" -> "wheel_enc_left_link" [label="xyz: -0.0735 0 0.0175 \nrpy: 0 -0 0"]
+"wheel_enc_left_link" -> "wheel_enc_left_link"
+"base_link" -> "wheel_enc_right_joint" [label="xyz: 0.0735 0 0.0175 \nrpy: 0 -0 0"]
+"wheel_enc_right_joint" -> "wheel_enc_right_link"
+"base_link" -> "wheel_front_left_joint" [label="xyz: -0.0873 0.157 0.05 \nrpy: 0 -0 0"]
+"wheel_front_left_joint" -> "wheel_front_left_link"
+"base_link" -> "wheel_front_right_joint" [label="xyz: 0.0873 0.157 0.05 \nrpy: 0 -0 0"]
+"wheel_front_right_joint" -> "wheel_front_right_link"
+"base_link" -> "wheel_left_joint" [label="xyz: -0.1795 0 0.0635 \nrpy: 0 -0 0"]
+"wheel_left_joint" -> "wheel_left_link"
+"base_link" -> "wheel_rear_joint" [label="xyz: 0 -0.1737 0.0635 \nrpy: 0 -0 0"]
+"wheel_rear_joint" -> "wheel_rear_link"
+"base_link" -> "wheel_right_joint" [label="xyz: 0.1795 0 0.0635 \nrpy: 0 -0 0"]
+"wheel_right_joint" -> "wheel_right_link"
+}

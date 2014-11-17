@@ -1,0 +1,1911 @@
+<robot
+  name="waiter_bot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00079288 3.8119E-05 0.2424"
+        rpy="0 0 0" />
+      <mass
+        value="20.912" />
+      <inertia
+        ixx="0.55751"
+        ixy="0.00013452"
+        ixz="-0.021755"
+        iyy="0.49991"
+        iyz="-0.00064395"
+        izz="0.28579" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/base_link.dae" />
+      </geometry>
+      <material
+        name="blue">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wheel_left_link">
+    <inertial>
+      <origin
+        xyz="1.8023E-06 0.0017316 7.4443E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.16061" />
+      <inertia
+        ixx="0.00021005"
+        ixy="6.6345E-09"
+        ixz="6.9394E-11"
+        iyy="0.00040783"
+        iyz="2.7427E-09"
+        izz="0.00021005" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/wheel_left_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_left_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.1795 0.0635"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_left_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="10"
+      velocity="6" />
+    
+  </joint>
+  <link
+    name="wheel_right_link">
+    <inertial>
+      <origin
+        xyz="6.9875E-11 -0.0017316 -1.6917E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.16061" />
+      <inertia
+        ixx="0.00021005"
+        ixy="5.6672E-13"
+        ixz="1.35E-12"
+        iyy="0.00040782"
+        iyz="-1.3718E-12"
+        izz="0.00021005" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/wheel_right_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="wheel_right_link">
+    <mu1>10000.0</mu1>
+    <mu2>10000.0</mu2>
+    <kp>1000000.0</kp> 
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+  </gazebo>
+  <gazebo reference="wheel_left_link">
+    <mu1>10000.0</mu1>
+    <mu2>10000.0</mu2>
+    <kp>1000000.0</kp> 
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+  </gazebo>
+  <joint
+    name="wheel_right_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.1795 0.0635"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_right_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="10"
+      velocity="6" />
+    
+  </joint>
+  <link
+    name="wheel_front_left_link">
+    <inertial>
+      <origin
+        xyz="5.5511E-17 -0.0018426 2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.29253" />
+      <inertia
+        ixx="0.00018232"
+        ixy="-6.5457E-22"
+        ixz="4.5257E-21"
+        iyy="0.00031096"
+        iyz="-1.754E-19"
+        izz="0.00018232" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/wheel_front_left_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_front_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="wheel_front_left_link">
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+    <kp>1000000.0</kp> 
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+  </gazebo>
+  <gazebo reference="wheel_front_right_link">
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+    <kp>1000000.0</kp> 
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+  </gazebo>
+  <gazebo reference="wheel_rear_link">
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+    <kp>1000000.0</kp> 
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+  </gazebo>
+  <joint
+    name="wheel_front_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.157 0.0873 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_front_left_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="12" />
+    
+  </joint>
+  <link
+    name="wheel_front_right_link">
+    <inertial>
+      <origin
+        xyz="0 0.0018426 -1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.29253" />
+      <inertia
+        ixx="0.00018232"
+        ixy="-3.0243E-19"
+        ixz="7.8989E-21"
+        iyy="0.00031096"
+        iyz="-3.717E-20"
+        izz="0.00018232" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/wheel_front_right_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_front_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_front_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.157 -0.0873 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_front_right_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="0"
+      velocity="12" />
+    
+  </joint>
+  <link
+    name="wheel_rear_link">
+    <inertial>
+      <origin
+        xyz="0.00013642 -7.4822E-10 -5.1123E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.45503" />
+      <inertia
+        ixx="0.00071095"
+        ixy="-1.0792E-11"
+        ixz="-7.3739E-12"
+        iyy="0.00041293"
+        iyz="-2.5494E-12"
+        izz="0.00041293" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/wheel_rear_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_rear_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_rear_joint"
+    type="continuous">
+    <origin
+      xyz="-0.1737 0 0.0635"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_rear_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="10"
+      velocity="6" />
+    
+  </joint>
+  <link
+    name="wheel_enc_left_link">
+    <inertial>
+      <origin
+        xyz="-2.2359E-16 0.0070609 -3.4694E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0081115" />
+      <inertia
+        ixx="1.0663E-06"
+        ixy="-8.8248E-21"
+        ixz="1.0358E-23"
+        iyy="7.8797E-07"
+        iyz="6.7486E-23"
+        izz="1.0663E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/wheel_enc_left_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_enc_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_enc_left_link"
+    type="continuous">
+    <origin
+      xyz="0 0.0735 0.0175"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_enc_left_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="12" />
+    
+  </joint>
+  <link
+    name="wheel_enc_center_link">
+    <inertial>
+      <origin
+        xyz="2.3278E-17 -0.0070609 3.4694E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0081115" />
+      <inertia
+        ixx="1.0663E-06"
+        ixy="-1.0897E-21"
+        ixz="1.0951E-23"
+        iyy="7.8797E-07"
+        iyz="1.7618E-22"
+        izz="1.0663E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/wheel_enc_center_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_enc_center_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_enc_center_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.001 0.0175"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_enc_center_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="0"
+      velocity="12" />
+    
+  </joint>
+  <link
+    name="wheel_enc_right_link">
+    <inertial>
+      <origin
+        xyz="7.619E-17 -0.0070609 3.4694E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0081115" />
+      <inertia
+        ixx="1.0663E-06"
+        ixy="-2.9356E-21"
+        ixz="6.3675E-23"
+        iyy="7.8797E-07"
+        iyz="9.0051E-23"
+        izz="1.0663E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/wheel_enc_right_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/wheel_enc_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_enc_right_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0735 0.0175"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_enc_right_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="0"
+      velocity="12" />
+    
+  </joint>
+  <link
+    name="chest_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.0074823 -0.00041206 -0.015531"
+        rpy="0 0 0" />
+      <mass
+        value="1.0755" />
+      <inertia
+        ixx="0.0080216"
+        ixy="-6.9555E-06"
+        ixz="0.00022396"
+        iyy="0.0065283"
+        iyz="-8.0264E-06"
+        izz="0.002653" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/chest_yaw_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/chest_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="chest_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.67143"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="chest_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="6" />
+    
+  </joint>
+  <link
+    name="tray_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.017043 8.5201E-10 0.12953"
+        rpy="0 0 0" />
+      <mass
+        value="0.17949" />
+      <inertia
+        ixx="0.0016939"
+        ixy="-2.3889E-12"
+        ixz="4.5408E-05"
+        iyy="0.0013069"
+        iyz="-1.4953E-11"
+        izz="0.00042449" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/tray_pitch_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/tray_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tray_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.02548 0 0.028"
+      rpy="0 0 0" />
+    <parent
+      link="chest_yaw_link" />
+    <child
+      link="tray_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="20"
+      velocity="6" />
+    
+  </joint>
+  <link
+    name="chest_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.028382 5.9256E-05 0.15252"
+        rpy="0 0 0" />
+      <mass
+        value="2.8255" />
+      <inertia
+        ixx="0.028436"
+        ixy="6.6758E-05"
+        ixz="0.00067862"
+        iyy="0.017701"
+        iyz="3.2924E-05"
+        izz="0.01343" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/chest_pitch_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/chest_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="chest_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.02548 0 0.028"
+      rpy="0 0 0" />
+    <parent
+      link="chest_yaw_link" />
+    <child
+      link="chest_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="20"
+      velocity="6" />
+    <calibration
+      rising="1"
+      falling="1" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      k_position="1"
+      k_velocity="1" />
+  </joint>
+  <link
+    name="head_yaw_link">
+    <inertial>
+      <origin
+        xyz="-6.1496E-05 0.00028335 -0.0026578"
+        rpy="0 0 0" />
+      <mass
+        value="0.14074" />
+      <inertia
+        ixx="0.00059095"
+        ixy="4.6164E-09"
+        ixz="-8.3477E-08"
+        iyy="0.00058142"
+        iyz="2.7143E-06"
+        izz="2.6988E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/head_yaw_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/head_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="-0.02548 0 0.27937"
+      rpy="0 0 0" />
+    <parent
+      link="chest_pitch_link" />
+    <child
+      link="head_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="6" />
+    
+  </joint>
+  <link
+    name="head_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.00098636 1.7298E-05 0.079602"
+        rpy="0 0 0" />
+      <mass
+        value="0.62154" />
+      <inertia
+        ixx="0.0030069"
+        ixy="1.3981E-06"
+        ixz="5.4783E-06"
+        iyy="0.00047842"
+        iyz="2.649E-07"
+        izz="0.0028797" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/head_pitch_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/head_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0545"
+      rpy="0 0 0" />
+    <parent
+      link="head_yaw_link" />
+    <child
+      link="head_pitch_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="6" />
+    
+  </joint>
+  <link
+    name="rarm_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="-2.0962E-05 0.040838 2.4467E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.29537" />
+      <inertia
+        ixx="0.00055958"
+        ixy="-4.2274E-07"
+        ixz="8.0348E-09"
+        iyy="0.00017565"
+        iyz="4.5719E-08"
+        izz="0.00068099" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/rarm_shoulder_pitch_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.02548 -0.17524 0.25777"
+      rpy="0 0 0" />
+    <parent
+      link="chest_pitch_link" />
+    <child
+      link="rarm_shoulder_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="6" />
+    
+  </joint>
+  <link
+    name="rarm_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.010689 2.1161E-06 -0.04963"
+        rpy="0 0 0" />
+      <mass
+        value="0.12976" />
+      <inertia
+        ixx="7.7009E-05"
+        ixy="-8.3215E-11"
+        ixz="1.5334E-05"
+        iyy="0.00015756"
+        iyz="-1.8381E-09"
+        izz="0.00010542" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/rarm_shoulder_roll_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="rarm_shoulder_pitch_link" />
+    <child
+      link="rarm_shoulder_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="6" />   
+  </joint>
+  <link
+    name="rarm_shoulder_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.00031315 6.3033E-05 -0.061294"
+        rpy="0 0 0" />
+      <mass
+        value="0.12735" />
+      <inertia
+        ixx="0.00015711"
+        ixy="-3.4965E-10"
+        ixz="-1.8589E-06"
+        iyy="0.00016656"
+        iyz="1.1801E-07"
+        izz="2.7768E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/rarm_shoulder_yaw_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_shoulder_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_shoulder_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0884"
+      rpy="0 0 0" />
+    <parent
+      link="rarm_shoulder_roll_link" />
+    <child
+      link="rarm_shoulder_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="6" />  
+  </joint>
+  <link
+    name="rarm_elbow_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.013079 -1.7119E-07 -0.055997"
+        rpy="0 0 0" />
+      <mass
+        value="0.22978" />
+      <inertia
+        ixx="0.00010379"
+        ixy="-2.3445E-10"
+        ixz="1.4292E-05"
+        iyy="0.00015501"
+        iyz="-5.6555E-10"
+        izz="9.1579E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/rarm_elbow_roll_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_elbow_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_elbow_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.097"
+      rpy="0 0 0" />
+    <parent
+      link="rarm_shoulder_yaw_link" />
+    <child
+      link="rarm_elbow_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="6" />
+    
+  </joint>
+  <link
+    name="rarm_forearm_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.00037366 3.5288E-05 -0.068872"
+        rpy="0 0 0" />
+      <mass
+        value="0.23636" />
+      <inertia
+        ixx="0.00020691"
+        ixy="-3.1211E-09"
+        ixz="-3.2996E-06"
+        iyy="0.00022102"
+        iyz="1.7331E-07"
+        izz="5.0511E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/rarm_forearm_yaw_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_forearm_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_forearm_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0859"
+      rpy="0 0 0" />
+    <parent
+      link="rarm_elbow_roll_link" />
+    <child
+      link="rarm_forearm_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="7.3"
+      velocity="8.2" />
+    
+  </joint>
+  <link
+    name="rarm_wrist_roll_link">
+    <inertial>
+      <origin
+        xyz="-5.4708E-05 0.0052782 -0.052471"
+        rpy="0 0 0" />
+      <mass
+        value="0.16057" />
+      <inertia
+        ixx="0.00010267"
+        ixy="-4.601E-07"
+        ixz="-2.4926E-07"
+        iyy="9.4951E-05"
+        iyz="-1.5477E-05"
+        izz="5.9955E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/rarm_wrist_roll_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_wrist_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_wrist_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0945"
+      rpy="0 0 0" />
+    <parent
+      link="rarm_forearm_yaw_link" />
+    <child
+      link="rarm_wrist_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="7.3"
+      velocity="8.2" />
+    
+  </joint>
+  <link
+    name="rarm_gripper_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.00099123 -0.0061458 -0.033325"
+        rpy="0 0 0" />
+      <mass
+        value="0.025912" />
+      <inertia
+        ixx="2.2617E-05"
+        ixy="-1.5785E-07"
+        ixz="-8.5595E-07"
+        iyy="2.8112E-05"
+        iyz="-4.9505E-06"
+        izz="1.3172E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/rarm_gripper_roll_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/rarm_gripper_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rarm_gripper_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.0001 -0.008 -0.057"
+      rpy="0 0 0" />
+    <parent
+      link="rarm_wrist_roll_link" />
+    <child
+      link="rarm_gripper_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="7.3"
+      velocity="8.2" />
+    <calibration
+      rising="1"
+      falling="1" />
+    <dynamics
+      damping="0.01"
+      friction="0.01" />
+    <safety_controller
+      k_position="1"
+      k_velocity="1" />
+    
+  </joint>
+  <link
+    name="larm_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="-2.0962E-05 -0.040838 -2.4467E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.29537" />
+      <inertia
+        ixx="0.00055958"
+        ixy="4.2274E-07"
+        ixz="-8.0348E-09"
+        iyy="0.00017565"
+        iyz="4.5719E-08"
+        izz="0.00068099" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/larm_shoulder_pitch_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.02548 0.17524 0.25777"
+      rpy="0 0 0" />
+    <parent
+      link="chest_pitch_link" />
+    <child
+      link="larm_shoulder_pitch_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="6" />
+    
+  </joint>
+  <link
+    name="larm_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.0106887277692605 2.11566752264525E-06 -0.0496295160737003"
+        rpy="0 0 0" />
+      <mass
+        value="0.129760026189219" />
+      <inertia
+        ixx="7.70092943706436E-05"
+        ixy="-8.38431649846138E-11"
+        ixz="1.53336839107009E-05"
+        iyy="0.000157555884740101"
+        iyz="-1.84098958942216E-09"
+        izz="0.000105415351592732" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/larm_shoulder_roll_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="larm_shoulder_pitch_link" />
+    <child
+      link="larm_shoulder_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="6" />
+    
+  </joint>
+  <link
+    name="larm_shoulder_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.000313152620579039 -6.79636115121229E-05 -0.061293733551368"
+        rpy="0 0 0" />
+      <mass
+        value="0.127345910516863" />
+      <inertia
+        ixx="0.000157106619338213"
+        ixy="4.87430711962178E-09"
+        ixz="-1.85884680274067E-06"
+        iyy="0.000166563012080349"
+        iyz="-1.02178645865058E-07"
+        izz="2.77677080256522E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/larm_shoulder_yaw_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_shoulder_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_shoulder_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0884"
+      rpy="0 0 0" />
+    <parent
+      link="larm_shoulder_roll_link" />
+    <child
+      link="larm_shoulder_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="6" />
+    
+  </joint>
+  <link
+    name="larm_elbow_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.0130787421920225 -1.71188074882256E-07 -0.0559965531341764"
+        rpy="0 0 0" />
+      <mass
+        value="0.229777333471728" />
+      <inertia
+        ixx="0.000103792346556961"
+        ixy="-2.34450627270505E-10"
+        ixz="1.42915256322089E-05"
+        iyy="0.000155008650333615"
+        iyz="-5.65553094156215E-10"
+        izz="9.15793242325208E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/larm_elbow_roll_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_elbow_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_elbow_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.097"
+      rpy="0 0 0" />
+    <parent
+      link="larm_shoulder_yaw_link" />
+    <child
+      link="larm_elbow_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="6" />
+    
+  </joint>
+  <link
+    name="larm_forearm_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.000373661845315048 -3.52890100386305E-05 -0.0688722189941664"
+        rpy="0 0 0" />
+      <mass
+        value="0.236363212375555" />
+      <inertia
+        ixx="0.00020691406294454"
+        ixy="3.11227954319644E-09"
+        ixz="-3.29958112773525E-06"
+        iyy="0.000221020930194256"
+        iyz="-1.73299850447771E-07"
+        izz="5.05107398147982E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/larm_forearm_yaw_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_forearm_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_forearm_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0859"
+      rpy="0 0 0" />
+    <parent
+      link="larm_elbow_roll_link" />
+    <child
+      link="larm_forearm_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="7.3"
+      velocity="8.2" />
+    
+  </joint>
+  <link
+    name="larm_wrist_roll_link">
+    <inertial>
+      <origin
+        xyz="-5.47073761619894E-05 -0.00527823017946361 -0.0524708389002063"
+        rpy="0 0 0" />
+      <mass
+        value="0.160573481152195" />
+      <inertia
+        ixx="0.000102667538358674"
+        ixy="4.60101359276095E-07"
+        ixz="-2.49252903147969E-07"
+        iyy="9.49514648988053E-05"
+        iyz="1.54774293266153E-05"
+        izz="5.99551624758795E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/larm_wrist_roll_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_wrist_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_wrist_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0945"
+      rpy="0 0 0" />
+    <parent
+      link="larm_forearm_yaw_link" />
+    <child
+      link="larm_wrist_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="7.3"
+      velocity="8.2" />
+    
+  </joint>
+  <link
+    name="larm_gripper_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.000991234933883957 0.00614583394933996 -0.0333253114434867"
+        rpy="0 0 0" />
+      <mass
+        value="0.0259118393866499" />
+      <inertia
+        ixx="2.26169169693971E-05"
+        ixy="1.57854192110598E-07"
+        ixz="-8.55950931009959E-07"
+        iyy="2.81122322343808E-05"
+        iyz="4.9505015513752E-06"
+        izz="1.31721968195775E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/dae/larm_gripper_roll_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://waiter_bot/meshes/larm_gripper_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="larm_gripper_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.0001 0.008 -0.057"
+      rpy="0 0 0" />
+    <parent
+      link="larm_wrist_roll_link" />
+    <child
+      link="larm_gripper_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="7.3"
+      velocity="8.2" />
+    
+  </joint>
+  
+  <!-- Laser Joint definition -->
+
+  <link name="laser_mount_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
+    </inertial>
+  </link>
+
+  <joint name="base_to_laser_mount" type="fixed">
+    <parent link="base_link"/>
+    <child link="laser_mount_link"/>
+    <origin xyz="0.181 0 0.10" rpy="3.14156 0 0"/>
+  </joint>
+
+  <link name="laser">
+    <visual>
+      <geometry>
+        <mesh filename="package://waiter_bot/sensors/hokuyo/meshes/hokuyo.dae"/>
+      </geometry>
+      <material name="black">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://waiter_bot/sensors/hokuyo/meshes/hokuyo_convex.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.15"/>
+      <origin xyz="0 0 -0.026"/>
+      <inertia ixx="0.00012499995" ixy="0.0" ixz="0.0" iyy="0.00012499995" iyz="0.0" izz="8.9999964e-05"/>
+    </inertial>
+  </link>
+
+  <joint name="laser_mount_to_laser" type="fixed">
+    <parent link="laser_mount_link"/>
+    <child link="laser"/>
+    <origin rpy="0 0 0" xyz="0 0 0.02"/>
+  </joint>
+
+  <!-- Add hokuyo -->
+  <gazebo reference="laser">
+    <sensor type="gpu_ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-2.0943951</min_angle>
+            <max_angle>2.0943951</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.02</min>
+          <max>5.6</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_base_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+        <gaussianNoise>0.005</gaussianNoise>
+        <topicName>scan</topicName>
+        <frameName>laser</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- Add the differential_drive_controller -->
+  <gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+        <rosDebugLevel>Debug</rosDebugLevel>
+        <publishWheelTF>false</publishWheelTF>
+        <publishWheelJointState>true</publishWheelJointState>
+        <alwaysOn>true</alwaysOn>
+        <leftJoint>wheel_left_joint</leftJoint>
+        <rightJoint>wheel_right_joint</rightJoint>
+        <wheelSeparation>0.359</wheelSeparation>
+        <wheelDiameter>0.127</wheelDiameter>
+        <wheelTorque>10</wheelTorque>
+        <wheelAcceleration>1.8</wheelAcceleration>
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <odometrySource>world</odometrySource>
+        <robotBaseFrame>base_link</robotBaseFrame>
+        <updateRate>10.0</updateRate>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin filename="libgazebo_ros_joint_state_publisher.so" name="joint_state_publisher">
+      <jointName>wheel_left_joint, wheel_right_joint</jointName>
+      <updateRate>10.0</updateRate>
+      <alwaysOn>true</alwaysOn>
+    </plugin>
+  </gazebo>
+
+
+  <!-- Add camera -->
+
+  <link name="head_pitch_camera_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
+    </inertial>
+  </link>
+
+  <joint name="head_pitch_camera_joint" type="fixed">
+    <parent link="head_pitch_link"/>
+    <child link="head_pitch_camera_link"/>
+    <origin xyz="0 0 0.20" rpy="0 0 0"/>
+  </joint>
+  
+  <gazebo reference="head_pitch_camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>head_pitch_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <!-- Add camera end -->
+
+  <!-- Add Kinect -->
+  <link name="kinect_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
+    </inertial>
+  </link>
+
+  <joint name="kinect_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="kinect_link"/>
+    <origin xyz="0.14 0 0.33" rpy="0 1.57 0"/>
+  </joint>
+
+  <gazebo reference="kinect_link">
+    <sensor type="depth" name="depthcam">
+      <visualize>true</visualize>
+      <update_rate>30.0</update_rate>
+      <camera name="base_cam">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="kinect_controller" filename="libgazebo_ros_openni_kinect.so">
+        <baseline>0.2</baseline>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>1.0</updateRate>
+        <cameraName>depthcam_ir</cameraName>
+        <imageTopicName>/depthcam/depth/image_raw</imageTopicName>
+        <cameraInfoTopicName>/depthcam/depth/camera_info</cameraInfoTopicName>
+        <depthImageTopicName>/depthcam/depth/image_raw</depthImageTopicName>
+        <depthImageInfoTopicName>/depthcam/depth/camera_info</depthImageInfoTopicName>
+        <depthImageCameraInfoTopicName>image_raw</depthImageCameraInfoTopicName>
+        <pointCloudTopicName>/depthcam/depth/points</pointCloudTopicName>
+        <frameName>kinect_link</frameName>
+        <pointCloudCutoff>0.5</pointCloudCutoff>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+        <CxPrime>0</CxPrime>
+        <Cx>0</Cx>
+        <Cy>0</Cy>
+        <focalLength>0</focalLength>
+        <hackBaseline>0</hackBaseline>
+      </plugin>
+    </sensor>
+  </gazebo>
+  
+</robot>
